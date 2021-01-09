@@ -1,17 +1,41 @@
 public class Table {
 
-    public int [] wheel = new int [37]; // array as the wheel
-    public String even = "EVEN"; // this will be called when even numbers are picked in the spinWheel method
-    public String odd = "ODD"; // this will be called when odd numbers are picked in the spinWheel method
+    private int [] wheel = new int [37];
+    public final String EVEN = "EVEN";
+    public final String ODD = "ODD";
+    private int pocket;
 
-    //roulette wheel, has 37 "boxes" numbered 0 to 36.
-    // This method populates the wheel with numbers 0 - 36 using for loop.
-
-    public void createWheel() {
-
+    Table() {
         for (int i = 0 ; i < wheel.length ; i ++) {
             wheel [i] = i;
         }
     }
 
+    public int[] getWheel() {
+        return wheel;
+    }
+
+    public void spin() {
+
+        int random = (int) (Math.random() * this.wheel.length);
+
+        System.out.println("Spinning the wheel...");
+
+        //create an effect of spinning
+        for (int i = 0 ; i <= 10 ; i ++) {
+            System.out.print("=");
+            try {
+                Thread.sleep(200); // try and catch has to be used to handle Interrupted Exception
+            }
+            catch (java.lang.InterruptedException ioe){
+                System.out.println("An error has occurred. Restart program or contact the developer");
+            }
+        }
+
+        this.pocket = random;
+    }
+
+    public int getPocket() {
+        return pocket;
+    }
 }
