@@ -21,11 +21,11 @@ public class Table {
 
         System.out.println("Spinning the wheel...");
 
-        //create an effect of spinning
+        //create spinning effect
         for (int i = 0 ; i <= 10 ; i ++) {
             System.out.print("=");
             try {
-                Thread.sleep(200); // try and catch has to be used to handle Interrupted Exception
+                Thread.sleep(100); // try and catch has to be used to handle Interrupted Exception
             }
             catch (java.lang.InterruptedException ioe){
                 System.out.println("An error has occurred. Restart program or contact the developer");

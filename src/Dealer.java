@@ -1,10 +1,9 @@
 public class Dealer {
 
-    Table table;
+    private Table table;
 
-
-    Dealer() {
-        this.table = new Table();
+    Dealer(Table table) {
+        this.table = table;
     }
 
     public void spinWheel () {
@@ -19,4 +18,9 @@ public class Dealer {
         }
 
     }
+
+    public Table getTable() {
+        return table;
+    }
+
 }
