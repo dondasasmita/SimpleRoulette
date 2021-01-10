@@ -55,7 +55,7 @@ public class Game {
 
             this.dealer.spinWheel();
 
-            if (betPocket == this.dealer.getTable().getPocket()) {
+            if (betPocket == this.dealer.getParkedPocket()) {
 
                 System.out.println("You win!");
                 this.player.receiveWinning();
